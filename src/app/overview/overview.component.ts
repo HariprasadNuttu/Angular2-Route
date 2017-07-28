@@ -13,10 +13,11 @@ export class OverviewComponent implements OnInit {
 
   ngOnInit() {
 
-    this.sub = this.router.routerState.parent(this.route)
-      .params.subscribe(params => {
-        this.parentRouteId = +params["id"];
-      });
+    console.log(this.router)
+    // this.sub = this.router.routerState.parent(this.route)
+    //   .params.subscribe(params => {
+    //     this.parentRouteId = +params["id"];
+    //   });
   }
 
 }

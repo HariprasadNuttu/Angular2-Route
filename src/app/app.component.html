@@ -3,7 +3,14 @@
 <a routerLink="/component-one" style="margin-right:30px">Component One</a>
 <a routerLink="/component-two" style="margin-right:30px">Component two</a>
 <a routerLink="/product-list">Product List</a>
+<a [routerLink]="[{ outlets: { 'sidebar': ['component-aux'] } }]">Component Aux</a>
   <!-- <app-component-one></app-component-one>
   <app-component-two></app-component-two> -->
   <router-outlet></router-outlet>
+
+
+  <div style="color: green; margin-top: 1rem;">Sidebar Outlet:</div>
+  <div style="border: 2px solid blue; padding: 1rem;">
+    <router-outlet name="sidebar"></router-outlet>
+  </div>
 </div>

@@ -9,6 +9,9 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { OverviewComponent } from './overview/overview.component';
 import { SpecsComponent } from './specs/specs.component';
+import { AccountsComponent } from './accounts/accounts.component';
+import { AuthService } from './services/auth.service';
+import { ComponentAuxComponent } from './component-aux/component-aux.component';
 
 @NgModule({
   declarations: [
@@ -18,13 +21,15 @@ import { SpecsComponent } from './specs/specs.component';
     ProductListComponent,
     ProductDetailsComponent,
     OverviewComponent,
-    SpecsComponent
+    SpecsComponent,
+    AccountsComponent,
+    ComponentAuxComponent
   ],
   imports: [
     BrowserModule,
     routing
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

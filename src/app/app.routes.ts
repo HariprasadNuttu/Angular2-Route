@@ -5,6 +5,9 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { OverviewComponent } from './overview/overview.component';
 import { SpecsComponent } from './specs/specs.component';
+import { AccountsComponent } from './accounts/accounts.component';
+import { AuthService } from './services/auth.service';
+import { ComponentAuxComponent } from './component-aux/component-aux.component';
 const routes: Routes = [
   // { path: '', redirectTo: 'component-one', pathMatch: 'full' },
   { path: '', redirectTo: 'product-list', pathMatch: 'full' },
@@ -17,7 +20,19 @@ const routes: Routes = [
     { path: 'overview', component: OverviewComponent },
     { path: 'specs', component: SpecsComponent }
   ]
-  }
+},
+{
+    path: 'accounts',
+    component: AccountsComponent,
+    canActivate: [AuthService],
+  },
+  {
+      path: 'component-aux',
+      component: ComponentAuxComponent,
+      outlet: 'sidebar',
+    },
+
+
 ];
 
 export const routing = RouterModule.forRoot(routes);
